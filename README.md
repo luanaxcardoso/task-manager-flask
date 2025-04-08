@@ -17,7 +17,7 @@ Execute the following command to install the required third party libraries:
 
 1. Clone the repository using the following command
     
-    ```git clone https://github.com/AdityaBagad/Task-Manager-using-Flask.git```
+    ```git clone https://github.com/luanaxcardoso/task-manager-flask```
 
 2. Install the dependencies using
 
@@ -26,8 +26,6 @@ Execute the following command to install the required third party libraries:
     ```pip3 install -r requirements.txt```
 
 3. Run this command to start the application
-
-    ```cd todo_project```
 
     ```python run.py```
 
