@@ -39,25 +39,25 @@ Login or Register if you dont have an account
 ## Accessing URL's 
 User cannot access any URL's if they are not logged in
 
-![Invalid Access](output/invalid-access.jpg)
+![Invalid Access](output/invalid-access.png)
 
 ## After Successfull Login
 See all your tasks after successfull login.
 
-![After Login](output/after-login.jpg)
+![After Login](output/after-login.png)
 
 ## Add Tasks
 Click the **Add Task** link in the side-bar to add tasks
 
-![Image of Yaktocat](output/add-task.jpg)
+![Image of Yaktocat](output/add-task.png)
 
 ## View All Tasks
 Click the **View All Task** link in the side-bar to see all tasks. You can **Update** and **Delete** Tasks from this page.
 
-![Image of Yaktocat](output/all-tasks.jpg)
+![Image of Yaktocat](output/all-tasks.png)
 
 ## Account Settings
 Change your username and password. You can access this by clicking dropdown in the Navbar
 
-![Image of Yaktocat](output/account-settings.jpg)
+![Image of Yaktocat](output/account-settings.png)
 
