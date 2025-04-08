@@ -1,4 +1,4 @@
-from flask import render_template, url_for, flash, redirect, request
+from flask import render_template, url_for, flash, redirect, request # type: ignore
 
 from todo_project import app, db, bcrypt
 
@@ -10,7 +10,7 @@ from todo_project.forms import (LoginForm, RegistrationForm, UpdateUserInfoForm,
 from todo_project.models import User, Task
 
 # Import 
-from flask_login import login_required, current_user, login_user, logout_user
+from flask_login import login_required, current_user, login_user, logout_user # type: ignore
 
 
 @app.errorhandler(404)
