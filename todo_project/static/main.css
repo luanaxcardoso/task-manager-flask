@@ -42,7 +42,7 @@ h6 {
 }
 
 a.article-title:hover {
-    color: #428bca;
+    color: #bb30c5;
     text-decoration: none;
 }
 
@@ -63,7 +63,7 @@ a.article-title:hover {
 }
 
 .article-metadata a:hover {
-    color: #333;
+    color: #e62962;
     text-decoration: none;
 }
 

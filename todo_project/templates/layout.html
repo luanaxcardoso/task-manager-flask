@@ -1,87 +1,93 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+  .navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem; 
+    font-weight: 700;
+  }
+  .nav-link.fs-2 {
+  font-size: 2rem !important;
+}
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+  </style>
 
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
-
-  {% if title %}
-  <title>To-Do - {{ title }}</title>
-  {% else %}
-  <title>To-Do App</title>
-  {% endif %}
+  <title>{% if title %}To-Do - {{ title }}{% else %}Aplicativo de Tarefas{% endif %}</title>
 </head>
 
-<body>
+<body class="bg-light">
   <header class="site-header">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-md navbar-light bg-success fixed-top shadow-sm">
       <div class="container">
-        <a class="navbar-brand mr-4" href="/">Task Manager</a>
+        <a class="navbar-brand fs-2 fw-bold text-black-50" href="/">Gerenciador de Tarefas</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
-          aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarToggle" aria-expanded="false" aria-label="Alternar navegação">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarToggle">
           <div class="navbar-nav mr-auto">
-            <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+            <a class="nav-item fs-2 nav-link text- fw-bold" href="{{ url_for('about') }}">
+              Sobre
+            </a>
           </div>
+          
 
-          <!-- Navbar Right Side -->
           <div class="navbar-nav">
             {% if current_user.is_authenticated %}
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Welcome {{ current_user.username }}!
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ url_for('account') }}">Account Settings</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a>
-              </div>
-            </li>
-
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                  Olá, {{ current_user.username }}!
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item text-success" href="{{ url_for('account') }}">Configurações da Conta</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item text-success" href="{{ url_for('logout') }}">Sair</a>
+                </div>
+                
+              </li>
             {% else %}
-            <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
-            <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+              <a class="nav-item nav-link" href="{{ url_for('login') }}">Entrar</a>
+              <a class="nav-item nav-link" href="{{ url_for('register') }}">Cadastrar</a>
             {% endif %}
-
           </div>
         </div>
       </div>
     </nav>
   </header>
-  <main role="main" class="container">
-    <div class="row">
 
-      <!-- For Labels -->
+
+  <main role="main" class="container" style="padding-top: 80px;">
+    <div class="row">
+     
       <div class="col-md-4">
         <div class="content-section">
           <nav class="nav flex-column">
-            <a class="nav-link" href="{{url_for('add_task')}}">Add Task</a>
-            <a class="nav-link active" href="{{url_for('all_tasks')}}">View All Tasks</a>
+            <a class="nav-link active text-success fw-bold" style="font-size: 1.75rem;" href="{{ url_for('add_task') }}">Adicionar Tarefa</a>
+            <a class="nav-link active text-success fw-bold" style="font-size: 1.75rem;" href="{{ url_for('all_tasks') }}">Ver Todas as Tarefas</a>
           </nav>
         </div>
       </div>
 
       <div class="col-md-8">
         {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-        {% for category, message in messages %}
-        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-          {{ message }}
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        {% endfor %}
-        {% endif %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            {% endfor %}
+          {% endif %}
         {% endwith %}
 
         {% block content %}{% endblock %}
@@ -89,10 +95,9 @@
     </div>
   </main>
 
+  <!-- Scripts JavaScript -->
   <script src="{{ url_for('static', filename='bootstrap/js/slim.js') }}"></script>
-  <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.js') }}"></script>
   <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.js') }}"></script>
-
 </body>
 
 </html>

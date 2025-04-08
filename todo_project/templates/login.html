@@ -1,57 +1,56 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
 <div class="content-section">
     <form method="POST" action="">
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">{{ title }}</legend>
+            <legend class="border-bottom mb-4 ">Entrar</legend>
 
-            <!-- Username Field -->
+            <!-- Campo: Nome de Usuário -->
             <div class="form-group">
                 {{ form.username.label(class="form-control-label") }}
                 {% if form.username.errors %}
-                {{ form.username(class="form-control is-invalid") }}
-                <div class="invalid-feedback">
-                    {% for error in form.username.errors %}
-                    <span>{{ error }}</span>
-                    {% endfor %}
-                </div>
+                    {{ form.username(class="form-control is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.username.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
                 {% else %}
-                {{ form.username(class="form-control") }}
+                    {{ form.username(class="form-control") }}
                 {% endif %}
             </div>
 
-            <!-- Password Field -->
+            <!-- Campo: Senha -->
             <div class="form-group">
                 {{ form.password.label(class="form-control-label") }}
                 {% if form.password.errors %}
-                {{ form.password(class="form-control is-invalid") }}
-                <div class="invalid-feedback">
-                    {% for error in form.password.errors %}
-                    <span>{{ error }}</span>
-                    {% endfor %}
-                </div>
+                    {{ form.password(class="form-control is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
                 {% else %}
-                {{ form.password(class="form-control") }}
+                    {{ form.password(class="form-control") }}
                 {% endif %}
             </div>
 
             <div class="form-group">
-                {{ form.submit(class="btn btn-primary") }}
+                {{ form.submit(class="btn btn-success") }}
             </div>
-
         </fieldset>
     </form>
 
-    <div class="border-top pt-3 mb-3">
+    <div class="border-top pt-3">
         <small class="text-muted">
-            Need An Account? <a class="ml-2" href="{{ url_for('register') }}">Sign Up Now</a>
+            Ainda não tem uma conta?
+            <a href="{{ url_for('register') }}" class="btn btn-outline-success btn-sm ml-2">
+                Cadastre-se agora
+            </a>
         </small>
     </div>
+    
 </div>
-
-
-
 {% endblock %}

@@ -2,37 +2,38 @@
 
 {% block content %}
 
-<!-- View All Tasks -->
+<!-- Ver Todas as Tarefas -->
 {% if tasks %}
-<table class="table table-bordered">
-    <thead>
-        <tr class="text-center">
-            <th scope="col">#</th>
-            <th scope="col" style="vertical-align: middle;">Task</th>
-            <th scope="col" style="width: 90px;">Update</th>
-            <th scope="col" style="width: 90px;">Delete</th>
+<table class="table table-bordered shadow-sm" style="font-family: 'Poppins', sans-serif;">
+    <thead class="bg-light text-dark border-bottom border-success">
+        <tr class="text-center align-middle">
+            <th scope="col" style="width: 40px;"></th>
+            <th scope="col" class="fw-semibold" style="vertical-align: middle;">Tarefa</th>
+            <th scope="col" class="fw-semibold" style="width: 90px;">Editar</th>
+            <th scope="col" class="fw-semibold" style="width: 90px;">Excluir</th>
         </tr>
     </thead>
+
+    
     <tbody>
         {% for task in tasks %}
         <tr>
             <th scope="row" class="text-center">{{ loop.index }}</th>
             <td>{{ task.content }}</td>
             <td class="text-center">
-                <a href="{{ url_for('update_task', task_id=task.id) }}" class="btn btn-outline-secondary btn-sm">Update</a>
+                <a href="{{ url_for('update_task', task_id=task.id) }}" class="btn btn-outline-secondary btn-sm">Editar</a>
             </td>
-            
             <td class="text-center">
-                <a href="{{ url_for('delete_task', task_id=task.id) }}" class="btn btn-outline-danger btn-sm">Delete</a>
+                <a href="{{ url_for('delete_task', task_id=task.id) }}" class="btn btn-outline-danger btn-sm">Excluir</a>
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
 {% else %}
-<legend>No Tasks to Display</legend>
+<legend>Nenhuma tarefa para exibir</legend>
 <p class="text-muted">
-    Click <a href="{{ url_for('add_task') }}">here</a> to Add Task
+    Clique <a href="{{ url_for('add_task') }}">aqui</a> para adicionar uma tarefa
 </p>
 {% endif %}
 

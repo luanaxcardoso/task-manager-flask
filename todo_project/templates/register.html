@@ -1,72 +1,84 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
 <div class="content-section">
     <form method="POST" action="">
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">{{ title }}</legend>
+            <legend class="border-bottom mb-4">Cadastro</legend>
 
-            <!-- Username Field -->
+            <!-- Nome de Usuário -->
             <div class="form-group">
                 {{ form.username.label(class="form-control-label") }}
                 {% if form.username.errors %}
-                {{ form.username(class="form-control is-invalid") }}
-                <div class="invalid-feedback">
-                    {% for error in form.username.errors %}
-                    <span>{{ error }}</span>
-                    {% endfor %}
-                </div>
+                    {{ form.username(class="form-control is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.username.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
                 {% else %}
-                {{ form.username(class="form-control") }}
+                    {{ form.username(class="form-control") }}
                 {% endif %}
             </div>
 
-            <!-- Password Field -->
+            <!-- Senha -->
             <div class="form-group">
                 {{ form.password.label(class="form-control-label") }}
                 {% if form.password.errors %}
-                {{ form.password(class="form-control is-invalid") }}
-                <div class="invalid-feedback">
-                    {% for error in form.password.errors %}
-                    <span>{{ error }}</span>
-                    {% endfor %}
-                </div>
+                    {{ form.password(class="form-control is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
                 {% else %}
-                {{ form.password(class="form-control") }}
+                    {{ form.password(class="form-control") }}
                 {% endif %}
             </div>
 
-            <!-- Confirm Password Field -->
+            <!-- Confirmar Senha -->
             <div class="form-group">
                 {{ form.confirm_password.label(class="form-control-label") }}
                 {% if form.confirm_password.errors %}
-                {{ form.confirm_password(class="form-control is-invalid") }}
-                <div class="invalid-feedback">
-                    {% for error in form.confirm_password.errors %}
-                    <span>{{ error }}</span>
-                    {% endfor %}
-                </div>
+                    {{ form.confirm_password(class="form-control is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.confirm_password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
                 {% else %}
-                {{ form.confirm_password(class="form-control") }}
+                    {{ form.confirm_password(class="form-control") }}
                 {% endif %}
             </div>
 
             <div class="form-group">
-                {{ form.submit(class="btn btn-primary") }}
+                {{ form.submit(class="btn btn-success") }}
             </div>
-
+            
         </fieldset>
     </form>
-
-    <div class="border-top pt-3 mb-3">
+    <div class="text-center mt-4">
         <small class="text-muted">
-            Already Have an Account! <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
+            Já tem uma conta?
+            <a href="{{ url_for('login') }}"
+               class="font-weight-bold px-3 py-2 rounded shadow-sm"
+               style="background: linear-gradient(135deg, #d16ba5, #c777b9, #ba83ca); 
+                      color: rgb(30, 29, 29); 
+                      text-decoration: none;
+                      letter-spacing: 0.5px;
+                      transition: all 0.3s ease-in-out;">
+                Entrar agora
+            </a>
         </small>
     </div>
+    
+    <style>
+        a:hover {
+            opacity: 0.9;
+            transform: scale(1.03);
+        }
+    </style>
+    
 </div>
-
-
-
 {% endblock %}

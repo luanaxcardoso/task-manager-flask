@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="content-section">
+    {% if current_user.is_authenticated %}
+        <legend class="border-bottom mb-4">Que bom que voltou, {{ current_user.username }}!</legend> 
+        <p>Use o menu ao lado para adicionar ou visualizar suas tarefas.</p>
+    {% else %}
+        <legend class="border-bottom mb-4">Bem-vindo(a)!</legend>
+        <p>Crie sua conta ou faça login para começar a gerenciar suas tarefas de forma prática.</p>
+    {% endif %}
+</div>
+{% endblock %}
