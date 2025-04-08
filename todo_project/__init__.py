@@ -20,6 +20,7 @@ migrate = Migrate(app, db)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'danger'
+login_manager.login_message = 'Você precisa estar logado para acessar esta página.'
 
 bcrypt = Bcrypt(app)
 

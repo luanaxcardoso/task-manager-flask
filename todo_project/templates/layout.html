@@ -9,8 +9,7 @@
   <style>
   .navbar-brand {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.8rem; 
-    font-weight: 700;
+    
   }
   .nav-link.fs-2 {
   font-size: 2rem !important;
@@ -25,7 +24,7 @@
   <header class="site-header">
     <nav class="navbar navbar-expand-md navbar-light bg-success fixed-top shadow-sm">
       <div class="container">
-        <a class="navbar-brand fs-2 fw-bold text-black-50" href="/">Gerenciador de Tarefas</a>
+        <a class="navbar-brand fw-bold text-black" style="font-size: 2.5rem;" href="/">Gerenciador de Tarefas</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
                 aria-controls="navbarToggle" aria-expanded="false" aria-label="Alternar navegação">
           <span class="navbar-toggler-icon"></span>
@@ -33,7 +32,7 @@
 
         <div class="collapse navbar-collapse" id="navbarToggle">
           <div class="navbar-nav mr-auto">
-            <a class="nav-item fs-2 nav-link text- fw-bold" href="{{ url_for('about') }}">
+            <a class="nav-item h5 nav-link fw-bold" href="{{ url_for('about') }}">
               Sobre
             </a>
           </div>
@@ -54,8 +53,10 @@
                 
               </li>
             {% else %}
-              <a class="nav-item nav-link" href="{{ url_for('login') }}">Entrar</a>
-              <a class="nav-item nav-link" href="{{ url_for('register') }}">Cadastrar</a>
+            <a class="nav-item nav-link h5 text-light fw-semibold" href="{{ url_for('login') }}">Entrar</a>
+            <a class="nav-item nav-link h5 text-light fw-semibold" href="{{ url_for('register') }}">Cadastrar</a>
+
+          
             {% endif %}
           </div>
         </div>

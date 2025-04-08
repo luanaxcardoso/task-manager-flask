@@ -9,17 +9,19 @@
         <tr class="text-center align-middle">
             <th scope="col" style="width: 40px;"></th>
             <th scope="col" class="fw-semibold" style="vertical-align: middle;">Tarefa</th>
+            <th scope="col" class="fw-semibold" style="vertical-align: middle;">Criada em</th> <!-- novo -->
             <th scope="col" class="fw-semibold" style="width: 90px;">Editar</th>
             <th scope="col" class="fw-semibold" style="width: 90px;">Excluir</th>
         </tr>
     </thead>
-
-    
     <tbody>
         {% for task in tasks %}
         <tr>
             <th scope="row" class="text-center">{{ loop.index }}</th>
             <td>{{ task.content }}</td>
+            <td class="text-center">
+                {{ task.date_posted.strftime('%d/%m/%Y %H:%M') if task.date_posted else '' }}
+            </td>
             <td class="text-center">
                 <a href="{{ url_for('update_task', task_id=task.id) }}" class="btn btn-outline-secondary btn-sm">Editar</a>
             </td>
@@ -29,6 +31,7 @@
         </tr>
         {% endfor %}
     </tbody>
+    
 </table>
 {% else %}
 <legend>Nenhuma tarefa para exibir</legend>
