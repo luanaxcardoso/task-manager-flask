@@ -34,7 +34,7 @@ Execute the following command to install the required third party libraries:
 ## Registration Page
 Login or Register if you dont have an account
 
-![Registration Page](output/register.jpg)
+![Registration Page](output/register.png)
 
 ## Accessing URL's 
 User cannot access any URL's if they are not logged in
