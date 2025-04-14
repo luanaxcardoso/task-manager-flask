@@ -1,3 +1,5 @@
+# Created by https://www.toptal.com/designers/subtlepatterns/ on 2014-10-22.
+# This file is a template for a Python .gitignore file.
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,63 +1,48 @@
-# Task-Manager-using-Flask
+# Gerenciador de Tarefas com Flask  
 
-A simple web application to store your To-Do Tasks .
+## ⚙️ Funcionalidades  
+- **Autenticação de usuário** (Cadastro/Login)  
+- **CRUD de tarefas** (Criar, Ler, Atualizar, Excluir)  
+- **Interface intuitiva**  
+- **Fácil implantação local**  
 
-# Features
+## 📋 Pré-requisitos  
+- Python 3.x  
+- Pip  
 
-- User Authentication
-- Easy to use and deploy locally.
+## 🛠️ Instalação  
+1. Clone o repositório:  
+   ```bash
+   git clone https://github.com/luanaxcardoso/task-manager-flask
 
-# Requirements
+Acesse o diretório do projeto:  
+   ```bash
+   cd task-manager-flask  
+   ```
+2. Crie um ambiente virtual:  
+   ```bash
+    python -m venv venv  
+    ```
+## Execução 
 
-Execute the following command to install the required third party libraries:
+3. Ative o ambiente virtual:
+   No Windows:  
+   ```bash
+   .\venv\Scripts\activate
+   ```
+4. Instale as dependências:  
+   ```bash  
+    pip install -r requirements.txt  
+    ```
+5. Execução:
+    ```bash  
+     python run.py  
+     ```
+6. Acesse o aplicativo no navegador:
+   ```	bash
+   http://localhost:5000  
+   ```
 
-```pip3 install -r requirements.txt```
+✨・・・・・・・・✨・・・・・・・・✨・・・・・・・・✨・・・・・・・・✨
 
-# Usage
-
-1. Clone the repository using the following command
-    
-    ```git clone https://github.com/luanaxcardoso/task-manager-flask```
-
-2. Install the dependencies using
-
-    ```cd  Task-Manager-using-Flask```
-    
-    ```pip3 install -r requirements.txt```
-
-3. Run this command to start the application
-
-    ```python run.py```
-
-# Results
-
-## Registration Page
-Login or Register if you dont have an account
-
-![Registration Page](output/register.png)
-
-## Accessing URL's 
-User cannot access any URL's if they are not logged in
-
-![Invalid Access](output/invalid-access.png)
-
-## After Successfull Login
-See all your tasks after successfull login.
-
-![After Login](output/after-login.png)
-
-## Add Tasks
-Click the **Add Task** link in the side-bar to add tasks
-
-![Image of Yaktocat](output/add-task.png)
-
-## View All Tasks
-Click the **View All Task** link in the side-bar to see all tasks. You can **Update** and **Delete** Tasks from this page.
-
-![Image of Yaktocat](output/all-tasks.png)
-
-## Account Settings
-Change your username and password. You can access this by clicking dropdown in the Navbar
-
-![Image of Yaktocat](output/account-settings.png)
-
+Feito inicialmente por AdityaBagad
